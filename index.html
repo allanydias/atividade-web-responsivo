@@ -13,7 +13,14 @@
 </head>
 <body>
 
-  <form action="text" placeholder="Qual a atividade?" name="atividade">
+  <form onsubmit="salvarAtividade(event)">
+    onsubmit: disparo
+    <div>
+      <input
+        type="text" 
+        placeholder="Qual a atividade?" name="atividade"
+      >
+    </div>
     <div>
       <select name="dia" >
         <option value="20-03-01">01 de feveiro</option>
