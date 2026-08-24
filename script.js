@@ -80,10 +80,12 @@ const atualizarListaDeAtividade = () => { // interpolar é chaves e não conchet
 
 atualizarListaDeAtividade()
 
+//formulário
 const salvarAtividade = (event) => {
   event.preventDefault()
 }
 
+//função dos dias
 const criarDiasSelecao = () => {
   const dias = [
     "2027-02-28",
@@ -98,7 +100,7 @@ const criarDiasSelecao = () => {
 
   for(let dia of dias) {
     const formatar = formatador(dia)
-    const diasSelecao = `${formatar.dia.numerico} de ${formatar.mes}` 
+    const diaFormatado = `${formatar.dia.numerico} de ${formatar.mes}` 
     
     diasSelecao += `<opition value="${dia}">${diaFormatado}</option`
   }
@@ -107,4 +109,12 @@ const criarDiasSelecao = () => {
 
 }
 
-criarDiasSelecao
+criarDiasSelecao()
+
+//função das horas
+const criarHorasSelecao = () => {
+  let horasDisponiceis = ''
+}
+criaHorasSelecao()
+
+//39:38
