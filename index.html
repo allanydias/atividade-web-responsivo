@@ -4,22 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
   <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-be.js"></script>
+  <script>dayjs.locale('pt-br')</script>
   
 </head>
 <body>
 
-  <h1>Atividades</h1>
-
-  <section>
+  <form action="text" placeholder="Qual a atividade?" name="atividade">
     <div>
-      <input type="checkbox">
-      <span>Tarefa de Coding: Mobile</span>
-      <time>Segunda, 24 de Agosto às 18h </time>
+      <select name="dia" >
+        <option value="20-03-01">01 de feveiro</option>
+      </select>
     </div>
-  </section>
 
-  <script src="script.js"></script>
+    <div>
+      <select name="hora">
+        <option value="10:30">10:30</option>
+      </select>
+    </div>
+
+    
+  </form>
+
+  <main>
+
+    <h1>Atividades</h1>
+  
+    <section>
+      <!--<div>
+          <input type="checkbox">
+          <span>Tarefa de Coding: Mobile</span>
+          <time>Segunda, 24 de Agosto às 18h </time>
+        </div> -->
+      </section> 
+  
+    <script src="script.js"></script>
+  </main>
   
 </body>
+    
