@@ -2,16 +2,26 @@
 const tarefas = {
   name: 'Olhar os E-mails',
   data: new Date('2026-08-19 10:30'),
-  finalizada: false
+  finalizada: true
 
 };
 // data tem que colocar aspas
 
 // chaves aqui entra como uma função = arrow fuction
-const criarItemDeAtividade = () => {
+const criarItemDeAtividade = (tarefas) => {
+
+  let input = '<input type="checkbox" '
+
+  if(tarefas.finalizada) {
+    input = input + 'checked' //pega o imput antigo com a cocatenação do checked para ficar com o check
+  }
+
+  input = input + '>' //completar a linha 13
+
+
   return ` <section>
         <div>
-          <input type="checkbox">
+          ${input}
           <span>${tarefas.name}</span> 
           <time>${tarefas.data}</time>
         </div>
