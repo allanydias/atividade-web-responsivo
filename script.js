@@ -13,6 +13,11 @@ const atividades = [
     nome: 'Separar as roupas que eu não uso',
     data: new Date('2026-08-25  15:00'),
     finalizada: false
+  },
+  {
+    nome: 'Limpar a galeria de fotos',
+    data: new Date('2026-08-26  10:00'),
+    finalizada: false
   }
 ]
 
@@ -24,10 +29,10 @@ const criarItemDeAtividade = (tarefa) => {
   let input = '<input type="checkbox" '
 
   if(tarefa.finalizada) {
-    input = input + 'checked' //pega o imput antigo com a cocatenação do checked para ficar com o check
+    input += 'checked' //pega o imput antigo com a cocatenação do checked para ficar com o check
   }
 
-  input = input + '>' //completar a linha 13
+  input += '>' //completar a linha 13
 
 
   return ` <section>
@@ -43,5 +48,5 @@ const criarItemDeAtividade = (tarefa) => {
 const section = document.querySelector('section');
 
 for(let atividade of atividades){
-  section.innerHTML = criarItemDeAtividade();
+  section.innerHTML += criarItemDeAtividade(atividade);
 }
