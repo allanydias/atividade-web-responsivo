@@ -1,5 +1,5 @@
 // objeto chave-valor por isso os dados nas {}. Diferente da função
-const tarefas = {
+const tarefa = {
   name: 'Olhar os E-mails',
   data: new Date('2026-08-19 10:30'),
   finalizada: true
@@ -7,12 +7,23 @@ const tarefas = {
 };
 // data tem que colocar aspas
 
+//array == lista 
+const atividades = [
+  tarefa, {
+    nome: 'Separar as roupas que eu não uso',
+    data: new Date('2026-08-25  15:00'),
+    finalizada: false
+  }
+]
+
+
+
 // chaves aqui entra como uma função = arrow fuction
-const criarItemDeAtividade = (tarefas) => {
+const criarItemDeAtividade = (tarefa) => {
 
   let input = '<input type="checkbox" '
 
-  if(tarefas.finalizada) {
+  if(tarefa.finalizada) {
     input = input + 'checked' //pega o imput antigo com a cocatenação do checked para ficar com o check
   }
 
@@ -22,12 +33,15 @@ const criarItemDeAtividade = (tarefas) => {
   return ` <section>
         <div>
           ${input}
-          <span>${tarefas.name}</span> 
-          <time>${tarefas.data}</time>
+          <span>${tarefa.name}</span> 
+          <time>${tarefa.data}</time>
         </div>
       </section>`; //templet literal, 🚩lembrar do ;
 };
 
 // interpolar é chaves e não conchete
 const section = document.querySelector('section');
-section.innerHTML = criarItemDeAtividade(tarefas);
+
+for(let atividade of atividades){
+  section.innerHTML = criarItemDeAtividade();
+}
