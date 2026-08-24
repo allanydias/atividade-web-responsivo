@@ -10,18 +10,16 @@ const tarefa = {
 //array == lista 
 const atividades = [
   tarefa, {
-    nome: 'Separar as roupas que eu não uso',
+    name: 'Separar as roupas que eu não uso',
     data: new Date('2026-08-25  15:00'),
     finalizada: false
   },
   {
-    nome: 'Limpar a galeria de fotos',
+    name: 'Limpar a galeria de fotos',
     data: new Date('2026-08-26  10:00'),
-    finalizada: false
+    finalizada: true
   }
 ]
-
-
 
 // chaves aqui entra como uma função = arrow fuction
 const criarItemDeAtividade = (tarefa) => {
@@ -33,7 +31,6 @@ const criarItemDeAtividade = (tarefa) => {
   }
 
   input += '>' //completar a linha 13
-
 
   return ` <section>
         <div>
