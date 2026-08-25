@@ -32,9 +32,8 @@ html, input, select, button, option {
   font-size: 14px;
   margin-bottom: 32px;
 }
-
 input, select {
-  all: unset;
+  all: unset
 }
 
 input, select, button {
@@ -57,7 +56,7 @@ input, select, button {
   gap: 10px;
 }
 
-.field-wrapper:focus-within {
+.field-wrapper:focus-within{
   outline: 2px solid yellowgreen;
 }
 
@@ -66,7 +65,7 @@ button {
   border: none;
   padding: 12px 20px;
   background-color: #aff445;
-  border-radius: 8px;
+  border-radius:  8px;
 
   font-weight: 500;
   font-size: 16px;
@@ -78,12 +77,12 @@ button {
   background: #18181b;
 
   box-shadow: 
-    0px 8px 8px rgba(0, 0, 0, 0.1), 
-    0px 4px 4px rgba(0, 0, 0, 0.1), 
-    0px 2px 2px rgba(0, 0, 0, 0.1), 
-    0px 0px 0px 1px rgba(0, 0, 0, 0.1), 
-    inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03), 
-    inset 0px 1px 0px rgba(255, 255, 255, 0.03);
+  0px 8px 8px rgba(0, 0, 0, 0.1), 
+  0px 4px 4px rgba(0, 0, 0, 0.1), 
+  0px 2px 2px rgba(0, 0, 0, 0.1), 
+  0px 0px 0px 1px rgba(0, 0, 0, 0.1), 
+  inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03), 
+  inset 0px 1px 0px rgba(255, 255, 255, 0.03);
 
   border-radius: 12px;
 }
@@ -98,8 +97,8 @@ h1 {
   font-size: 24px;
 
   margin-top: 24px;
+  margin-bottom: 24px
 }
-
 section {
   display: grid;
   gap: 10px;
@@ -119,15 +118,15 @@ section .card-bg {
   padding: 16px;
 
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 section .card-bg:has(:checked) {
-  outline: 1.5px solid #aff445;
+  border: 1.5px solid #aff445;
 }
 
-section .card-bg:has(:checked) .active, section .card-bg .inactive {
+section .card-bg:has(:checked) .active, section .card-bg .inactive{
   display: block;
 }
 
@@ -143,22 +142,18 @@ section .card-bg > div {
 
 time {
   font-size: 14px;
-  color: #a1a1ab;
-  text-align: left;
+  color: #A1A1AB;
+  text-align: right;
 }
 
-time.short {
-  display: block;
-}
-
-time.full {
+time.full{
   display: none;
 }
 
 @media (width > 1024px) {
   #app {
     display: flex;
-    max-width: 960px;
+    max-width: 960px ;
     gap: 32px;
   }
 
@@ -171,23 +166,16 @@ time.full {
     text-align: left;
   }
 
-  section .card-bg {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    animation: appear 300ms;
-  }
-
-  time {
-    text-align: right;
-  }
-
   time.short {
     display: none;
   }
 
   time.full {
     display: block;  
+  }
+
+  section .card-bg {
+    animation: appear 300ms;
   }
 }
 
