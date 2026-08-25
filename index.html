@@ -5,37 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-be.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/pt-br.js"></script>
   <script>dayjs.locale('pt-br')</script>
   
 </head>
 <body>
+  <div id="app">
+    <form onsubmit="salvarAtividade(event)">
+      <!-- onsubmit: disparo -->
+       <div class="fields">
+         <div class="field-wrapper">
 
-  <form onsubmit="salvarAtividade(event)">
-    <!-- onsubmit: disparo -->
-    <div>
-      <input
-        type="text" 
-        placeholder="Qual a atividade?" name="atividade"
-        required
-      >
-    </div>
-    <div>
-      <select name="dia" >
-        <option value="20-03-01">01 de feveiro</option>
-      </select>
-    </div>
+          <img width="24" height="24" src="https://img.icons8.com/forma-light/24/price-tag.png" alt="price-tag"/>
 
-    <div>
-      <select name="hora">
-        <option value="10:30">10:30</option>
-      </select>
-    </div>
-
-    <button>Salvar atividade</button>
-  </form>
+           <input
+             type="text" 
+             placeholder="Qual a atividade?" name="atividade"
+             required
+           >
+         </div>
+   
+         <div class="field-wrapper">
+           <select name="dia" >
+             <option value="20-03-01">01 de feveiro</option>
+           </select>
+         </div>
+     
+         <div class="field-wrapper">
+           <select name="hora">
+             <option value="10:30">10:30</option>
+           </select>
+         </div>
+       </div>
+  
+      <button>Salvar atividade</button>
+    </form>
+  </div>
 
   <main>
 
