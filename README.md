@@ -1,3 +1,34 @@
+# 📋 Web Responsive Activities
+
+Responsive web application for managing activities/tasks, built with pure HTML, CSS, and JavaScript.
+
+## 🎯 About the project
+
+The project allows the user to view a list of activities and register new tasks through a form, entering the activity name, day, and time. Dates are formatted in Portuguese (pt-BR) using the [Day.js](https://day.js.org/) library.
+
+## ✨ Features
+
+- Mark activities as completed (checkbox)
+- Form to add new activities
+- Day and time selection for the activity
+- Date formatting in Portuguese (pt-BR)
+- Responsive layout, adapted to different screen sizes
+
+## 🛠️ Technologies used
+
+- **HTML5** — page structure
+- **CSS3** — styling and responsiveness
+- **JavaScript** — DOM manipulation logic and interactivity
+- **Day.js** — date formatting and manipulation
+
+## About
+
+This project was developed during the **NLW #16 Journey - HTML, CSS and JS** course, by [Rocketseat](https://www.rocketseat.com.br).
+
+**deploy:** https://allanydias.github.io/atividade-web-responsivo/
+
+---
+
 # 📋 Atividades Web Responsivo
 
 Aplicação web responsiva para gerenciamento de atividades/tarefas, desenvolvida com HTML, CSS e JavaScript puro.
