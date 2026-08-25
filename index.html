@@ -18,10 +18,15 @@
   <div id="app">
     <form onsubmit="salvarAtividade(event)">
       <!-- onsubmit: disparo -->
+       <div id="place" class="card-bg">
+          <img width="24" height="24" src="https://img.icons8.com/fluency-systems-regular/48/EBEBEB/marker--v1.png" alt="marker--v1"/>
+
+          Recife, PE 
+      </div>
        <div class="fields">
          <div class="field-wrapper">
 
-          <img width="24" height="24" src="https://img.icons8.com/forma-light/24/price-tag.png" alt="price-tag"/>
+          <img width="24" height="24" src="https://img.icons8.com/forma-light/24/EBEBEB/price-tag.png" alt="price-tag"/>
 
            <input
              type="text" 
@@ -31,16 +36,22 @@
          </div>
    
          <div class="field-wrapper">
+
+          <img width="24" height="24" src="https://img.icons8.com/material-rounded/24/EBEBEB/calendar--v1.png" alt="calendar--v1"/>
+
            <select name="dia" >
              <option value="20-03-01">01 de feveiro</option>
            </select>
          </div>
      
          <div class="field-wrapper">
+            <img width="24" height="24" src="https://img.icons8.com/forma-light/24/EBEBEB/time.png" alt="time"/>
+      
            <select name="hora">
              <option value="10:30">10:30</option>
            </select>
          </div>
+
        </div>
   
       <button>Salvar atividade</button>

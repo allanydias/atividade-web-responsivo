@@ -44,15 +44,14 @@ const criarItemDeAtividade = (tarefa) => {
   const formatar = formate(tarefa.data);
 
 
-  return ` <section>
-        <div>
+  return `
+        <div class="card-bg>
           ${input}
           <span>${tarefa.name}</span> 
           <time>${formatar.dia.semana.longo}, 
           dia ${formatar.dia.numerico} de ${formatar.mes} às ${formatar.hora}h </time>
-        </div>
-      </section>`; //templet literal, 🚩lembrar do ;
-};
+        </div>`//templet literal
+}
 
 const atualizarListaDeAtividade = () => { // interpolar é chaves e não conchete
   const section = document.querySelector('section');
@@ -145,7 +144,7 @@ const concluirAtividade = (event) => {
   })
 
   if(!atividade) return
-  
+
   atividade.finalizada = !atividade.finalizada
   atualizarListaDeAtividade()
 }
