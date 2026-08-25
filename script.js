@@ -32,11 +32,11 @@ atividades = []
 // chaves aqui entra como uma função = arrow fuction
 const criarItemDeAtividade = (tarefa) => { 
 
-  let input = `<input onchange="concluirAtividade(event) value="${tarefa.data}"
+  let input = `<input onchange="concluirAtividade(event)" value="${tarefa.data}"
   type="checkbox"`
 
   if(tarefa.finalizada ) {
-    input += 'checked' //pega o imput antigo com a cocatenação do checked para ficar com o check
+    input += ' checked' //pega o imput antigo com a cocatenação do checked para ficar com o check
   }
 
   input += '>' //completar a linha 13
@@ -45,9 +45,19 @@ const criarItemDeAtividade = (tarefa) => {
 
 
   return `
-        <div class="card-bg>
+        <div class="card-bg">
           ${input}
-          <span>${tarefa.name}</span> 
+
+          <div>
+            <svg class="active" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
+              <g fill="#9acd32" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)">
+              <path d="M24,4c-11.028,0 -20,8.972 -20,20c0,11.028 8.972,20 20,20c11.028,0 20,-8.972 20,-20c0,-11.028 -8.972,-20 -20,-20zM32.561,20.561l-10,10c-0.293,0.293 -0.677,0.439 -1.061,0.439c-0.384,0 -0.768,-0.146 -1.061,-0.439l-5,-5c-0.586,-0.586 -0.586,-1.535 0,-2.121c0.586,-0.586 1.535,-0.586 2.121,0l3.939,3.939l8.939,-8.939c0.586,-0.586 1.535,-0.586 2.121,0c0.586,0.586 0.587,1.535 0.002,2.121z"></path> </g></g>
+            </svg>
+
+          <img width="24" height="24" src="https://img.icons8.com/ios/50/EBEBEB/inactive-state.png" alt="inactive-state class="inactive"/>
+          
+          <span>${tarefa.nome}</span> 
+          </div>
 
           <time class="short">
             ${formatar.dia.semana.curto}
@@ -55,9 +65,9 @@ const criarItemDeAtividade = (tarefa) => {
             ${formatar.hora}
           </time>
 
-          <time class="full>${formatar.dia.semana.longo}, 
+          <time class="full">${formatar.dia.semana.longo}, 
           dia ${formatar.dia.numerico} de ${formatar.mes} às ${formatar.hora}h </time>
-          
+
         </div>`//templet literal
 }
 
@@ -76,6 +86,8 @@ const atualizarListaDeAtividade = () => { // interpolar é chaves e não conchet
   }
 
 }
+
+atualizarListaDeAtividade() 
 
 //formulário
 const salvarAtividade = (event) => {
