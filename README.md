@@ -21,3 +21,7 @@ O projeto permite que o usuário visualize uma lista de atividades e cadastre no
 - **CSS3** — estilização e responsividade
 - **JavaScript** — lógica de manipulação do DOM e interatividade
 - **Day.js** — formatação e manipulação de datas
+
+## Sobre
+
+Este projeto foi desenvolvido durante o curso **NLW #16 Journey - HTML, CSS e JS**, da [Rocketseat](https://www.rocketseat.com.br).
