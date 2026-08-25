@@ -99,3 +99,20 @@ h1 {
 
   margin-top: 24px;
 }
+section {
+  display: grid;
+  gap: 10px;
+}
+
+section .card-bg {
+  padding: 10px 16px;
+}
+
+time {
+  font-size: 14px;
+  color: #a1a1ab
+}
+
+time.full{
+  display: none;
+}

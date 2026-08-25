@@ -48,8 +48,16 @@ const criarItemDeAtividade = (tarefa) => {
         <div class="card-bg>
           ${input}
           <span>${tarefa.name}</span> 
-          <time>${formatar.dia.semana.longo}, 
+
+          <time class="short">
+            ${formatar.dia.semana.curto}
+            ${formatar.dia.numerico}
+            ${formatar.hora}
+          </time>
+
+          <time class="full>${formatar.dia.semana.longo}, 
           dia ${formatar.dia.numerico} de ${formatar.mes} às ${formatar.hora}h </time>
+          
         </div>`//templet literal
 }
 
