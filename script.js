@@ -16,12 +16,12 @@ const formate = data => {
 //array == lista 
 let atividades = [
   {
-    name: 'Separar as roupas que eu não uso',
+    nome: 'Separar as roupas que eu não uso',
     data: new Date('2026-08-25  15:00'),
     finalizada: false
   },
   {
-    name: 'Limpar a galeria de fotos',
+    nome: 'Limpar a galeria de fotos',
     data: new Date('2026-08-26  10:00'),
     finalizada: true
   }
@@ -111,6 +111,10 @@ const salvarAtividade = (event) => {
     return item.data == tarefa.data
   })
 
+  if(atividadeExiste) {
+    return alert('Dia/Hora não disponível')
+  }
+
   atividades = [tarefa,...atividades] //três pontinhos para representar as atividade antigas
   atualizarListaDeAtividade()
 }
@@ -148,7 +152,7 @@ const criarHorasSelecao = () => {
   for(let i = 6; i<23; i++) {//vai executar de 6 até 23
     const hora = String(i).padStart(2, '0')
     horasDisponiveis += `<option value="${hora}:00">${hora}:00</option>`
-     horasDisponiveis += `<option value="${hora}:30">${hora}:30</option>`
+    horasDisponiveis += `<option value="${hora}:30">${hora}:30</option>`
   }
 
   document.querySelector('select[name="hora"]').innerHTML = horasDisponiveis
@@ -168,6 +172,3 @@ const concluirAtividade = (event) => {
   atividade.finalizada = !atividade.finalizada
   atualizarListaDeAtividade()
 }
-
-
-//39:38
