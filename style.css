@@ -85,7 +85,7 @@ button {
   inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03), 
   inset 0px 1px 0px rgba(255, 255, 255, 0.03);
 
-  border-radius: 12px;;
+  border-radius: 12px;
 }
 
 main {
@@ -105,11 +105,12 @@ section {
 }
 
 section input[type="checkbox"] {
-  border:  1px solid;
+  border: none;
   height: 100%;
   position: absolute;
   inset: 0;
-
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 section .card-bg {
@@ -119,6 +120,7 @@ section .card-bg {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 
 section .card-bg:has(:checked) .active, section .card-bg .inactive{
@@ -164,5 +166,19 @@ time.full{
 
   time.short {
     display: none;
+  }
+
+  time.full {
+    display: block;  
+  }
+
+  section .card-bg {
+    animation: appear 300ms;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
   }
 }

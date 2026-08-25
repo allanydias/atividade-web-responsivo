@@ -54,7 +54,7 @@ const criarItemDeAtividade = (tarefa) => {
               <path d="M24,4c-11.028,0 -20,8.972 -20,20c0,11.028 8.972,20 20,20c11.028,0 20,-8.972 20,-20c0,-11.028 -8.972,-20 -20,-20zM32.561,20.561l-10,10c-0.293,0.293 -0.677,0.439 -1.061,0.439c-0.384,0 -0.768,-0.146 -1.061,-0.439l-5,-5c-0.586,-0.586 -0.586,-1.535 0,-2.121c0.586,-0.586 1.535,-0.586 2.121,0l3.939,3.939l8.939,-8.939c0.586,-0.586 1.535,-0.586 2.121,0c0.586,0.586 0.587,1.535 0.002,2.121z"></path> </g></g>
             </svg>
 
-          <img width="24" height="24" src="https://img.icons8.com/ios/50/EBEBEB/inactive-state.png" alt="inactive-state class="inactive"/>
+          <img width="24" height="24" src="https://img.icons8.com/ios/50/EBEBEB/inactive-state.png" alt="inactive-state" class="inactive"/>
           
           <span>${tarefa.nome}</span> 
           </div>
