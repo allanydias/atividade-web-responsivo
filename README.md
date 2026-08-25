@@ -8,7 +8,6 @@ O projeto permite que o usuário visualize uma lista de atividades e cadastre no
 
 ## ✨ Funcionalidades
 
-- Listagem dinâmica de atividades
 - Marcação de atividades como concluídas (checkbox)
 - Formulário para adicionar novas atividades
 - Seleção de dia e horário da atividade
@@ -25,3 +24,5 @@ O projeto permite que o usuário visualize uma lista de atividades e cadastre no
 ## Sobre
 
 Este projeto foi desenvolvido durante o curso **NLW #16 Journey - HTML, CSS e JS**, da [Rocketseat](https://www.rocketseat.com.br).
+
+**deploy:** https://allanydias.github.io/atividade-web-responsivo/
