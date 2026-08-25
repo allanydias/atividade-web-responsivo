@@ -8,23 +8,14 @@ const formate = data => {
         longo: dayjs(data).format('dddd'),
       }
     },
-    mes: dayjs(data.format('MMMM')),
+    mes: dayjs(data).format('MMMM'),
     hora: dayjs(data).format('HH:mm')
   }
 }
 
-
-// objeto chave-valor por isso os dados nas {}. Diferente da função
-const tarefa = {
-  name: 'Olhar os E-mails',
-  data: new Date('2026-08-19 10:30'),
-  // data tem que colocar aspas
-  finalizada: true //atributo
-};
-
 //array == lista 
 let atividades = [
-  tarefa, {
+  {
     name: 'Separar as roupas que eu não uso',
     data: new Date('2026-08-25  15:00'),
     finalizada: false
@@ -41,7 +32,8 @@ atividades = []
 // chaves aqui entra como uma função = arrow fuction
 const criarItemDeAtividade = (tarefa) => { 
 
-  let input = '<input type="checkbox" '
+  let input = `<input onchange="concluirAtividade(event) value="${tarefa.data}"
+  type="checkbox"`
 
   if(tarefa.finalizada ) {
     input += 'checked' //pega o imput antigo com a cocatenação do checked para ficar com o check
@@ -49,7 +41,7 @@ const criarItemDeAtividade = (tarefa) => {
 
   input += '>' //completar a linha 13
 
-  const formatar = formatador(atividade.data);
+  const formatar = formate(tarefa.data);
 
 
   return ` <section>
@@ -64,12 +56,12 @@ const criarItemDeAtividade = (tarefa) => {
 
 const atualizarListaDeAtividade = () => { // interpolar é chaves e não conchete
   const section = document.querySelector('section');
+  section.innerHTML = ''
 
   //verificar se a minha lista está vazia
   if(atividades.length == 0) { //length significa quantos elementos tem na lista
-
     section.innerHTML = `<p>Nenhuma Atividade cadastrada.</p>`
-    return //para a aplicação
+      return //para a aplicação
   } 
   
   for(let atividade of atividades){
@@ -78,11 +70,30 @@ const atualizarListaDeAtividade = () => { // interpolar é chaves e não conchet
 
 }
 
-atualizarListaDeAtividade()
-
 //formulário
 const salvarAtividade = (event) => {
   event.preventDefault()
+  const dadosDoFormulario = new FormData(event.target)
+
+  const nome = dadosDoFormulario.get('atividade')
+  const dia = dadosDoFormulario.get('dia')
+  const hora = dadosDoFormulario.get('hora')
+  const data = `${dia} ${hora}`
+
+  // objeto chave-valor por isso os dados nas {}. Diferente da função
+  const tarefa = {
+    nome, 
+    data,
+    // data tem que colocar aspas
+    finalizada: false //atributo
+  }
+
+  const atividadeExiste = atividades.find((item) => {
+    return item.data == tarefa.data
+  })
+
+  atividades = [tarefa,...atividades] //três pontinhos para representar as atividade antigas
+  atualizarListaDeAtividade()
 }
 
 //função dos dias
@@ -99,13 +110,13 @@ const criarDiasSelecao = () => {
   let diaSelecao = ''
 
   for(let dia of dias) {
-    const formatar = formatador(dia)
+    const formatar = formate(dia)
     const diaFormatado = `${formatar.dia.numerico} de ${formatar.mes}` 
     
-    diasSelecao += `<opition value="${dia}">${diaFormatado}</option`
+    diaSelecao += `<option value="${dia}">${diaFormatado}</option>`
   }
 
-  document.querySelector('select[name="dia"]').innerHTML = criarDiasSelecao
+  document.querySelector('select[name="dia"]').innerHTML = diaSelecao
 
 }
 
@@ -113,8 +124,31 @@ criarDiasSelecao()
 
 //função das horas
 const criarHorasSelecao = () => {
-  let horasDisponiceis = ''
+  let horasDisponiveis = ''
+
+  for(let i = 6; i<23; i++) {//vai executar de 6 até 23
+    const hora = String(i).padStart(2, '0')
+    horasDisponiveis += `<option value="${hora}:00">${hora}:00</option>`
+     horasDisponiveis += `<option value="${hora}:30">${hora}:30</option>`
+  }
+
+  document.querySelector('select[name="hora"]').innerHTML = horasDisponiveis
 }
-criaHorasSelecao()
+criarHorasSelecao()
+
+const concluirAtividade = (event) => {
+  const input = event.target
+  const dataDesteInput = input.value
+
+  const atividade = atividades.find((item) => {
+    return item.data == dataDesteInput
+  })
+
+  if(!atividade) return
+  
+  atividade.finalizada = !atividade.finalizada
+  atualizarListaDeAtividade()
+}
+
 
 //39:38
